@@ -9,12 +9,14 @@ using namespace cv;
 
 int main() {
 
+	string imgname = "lena.png";
 	int arr[256] = { 0 };
 
-	Mat image = imread("papel.jpg", CV_LOAD_IMAGE_GRAYSCALE);
+	Mat original = imread(imgname, CV_LOAD_IMAGE_GRAYSCALE);
+	Mat image = imread(imgname, CV_LOAD_IMAGE_GRAYSCALE);
 
 	//binary
-	Mat image2 = imread("papel.jpg", CV_LOAD_IMAGE_GRAYSCALE);
+	Mat image2 = imread(imgname, CV_LOAD_IMAGE_GRAYSCALE);
 	for (int i = 0; i < image2.rows; i++) {
 		for (int j = 0; j < image2.cols; j++) {
 			if (image2.at<uchar>(i, j) > 80) {
@@ -26,7 +28,7 @@ int main() {
 		}
 	}
 	//binary inverse
-	Mat image3 = imread("papel.jpg", CV_LOAD_IMAGE_GRAYSCALE);
+	Mat image3 = imread(imgname, CV_LOAD_IMAGE_GRAYSCALE);
 	for (int i = 0; i < image2.rows; i++) {
 		for (int j = 0; j < image2.cols; j++) {
 			if (image3.at<uchar>(i, j) > 80) {
@@ -38,23 +40,23 @@ int main() {
 		}
 	}
 	//trunc
-	Mat image4 = imread("papel.jpg", CV_LOAD_IMAGE_GRAYSCALE);
+	Mat image4 = imread(imgname, CV_LOAD_IMAGE_GRAYSCALE);
 	for (int i = 0; i < image4.rows; i++) {
 		for (int j = 0; j < image4.cols; j++) {
 			if (image4.at<uchar>(i, j) > 80) {
 				image4.at<uchar>(i, j) = 255;
 			}
 			else {
-				
+
 			}
 		}
 	}
 	//tozero
-	Mat image5 = imread("papel.jpg", CV_LOAD_IMAGE_GRAYSCALE);
+	Mat image5 = imread(imgname, CV_LOAD_IMAGE_GRAYSCALE);
 	for (int i = 0; i < image5.rows; i++) {
 		for (int j = 0; j < image5.cols; j++) {
 			if (image5.at<uchar>(i, j) > 80) {
-				
+
 			}
 			else {
 				image5.at<uchar>(i, j) = 0;
@@ -62,19 +64,19 @@ int main() {
 		}
 	}
 	//tozero inv
-	Mat image6 = imread("papel.jpg", CV_LOAD_IMAGE_GRAYSCALE);
+	Mat image6 = imread(imgname, CV_LOAD_IMAGE_GRAYSCALE);
 	for (int i = 0; i < image6.rows; i++) {
 		for (int j = 0; j < image6.cols; j++) {
 			if (image6.at<uchar>(i, j) > 80) {
 				image6.at<uchar>(i, j) = 0;
 			}
 			else {
-				
+
 			}
 		}
 	}
 
-	//arreglo para histogramas: cada valor cauntas veces se repite
+	//histogram array: each color value, how many times it repeats itself
 
 	for (int i = 0; i < image.rows; i++) {
 		for (int j = 0; j < image.cols; j++) {
@@ -108,7 +110,7 @@ int main() {
 	for (int i = 0; i < 255; i += 2) {
 		rectangle(myMat2, Point(inc * i, myMat2.rows), Point((inc*(i + 2) - 1), myMat2.rows - (((arr[i] + arr[i + 1]) * myMat2.rows) / (2 * max))), Scalar(255, 255, 255, 0), CV_FILLED);
 	}
-	
+
 
 	//-------------------------------     incremento 4
 	Mat myMat4(alto, ancho, CV_32F, Scalar(0));
@@ -128,17 +130,19 @@ int main() {
 			}
 		}
 	}
-	//filtros
-	
+	//filters
+
+	namedWindow("original", WINDOW_AUTOSIZE);
+	imshow("original", original);
 	namedWindow("binary inv", WINDOW_AUTOSIZE);
 	imshow("binary inv", image3);
-	namedWindow("trunc", WINDOW_AUTOSIZE);
-	imshow("trunc", image4);
+	namedWindow("threshold", WINDOW_AUTOSIZE);
+	imshow("threshold", image4);
 	namedWindow("tozero", WINDOW_AUTOSIZE);
 	imshow("tozero", image5);
 	namedWindow("tozero inv", WINDOW_AUTOSIZE);
 	imshow("tozero inv", image6);
-	//histogramas
+	//histograms
 	namedWindow("Display window", WINDOW_AUTOSIZE);
 	imshow("Display window", myMat1);
 	namedWindow("Display window2", WINDOW_AUTOSIZE);
@@ -153,4 +157,3 @@ int main() {
 	waitKey(0);
 
 }
-
