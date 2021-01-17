@@ -12,7 +12,7 @@ This image has an histogram of values as follows. <br />
 
 ![image](https://github.com/the-other-mariana/image-processing-algorithms/blob/master/005-equalization/original-histogram.png?raw=true) <br/>
 
-The equlaized image is the one below. <br />
+The equalized image is the one below. <br />
 
 ![image](https://github.com/the-other-mariana/image-processing-algorithms/blob/master/005-equalization/equalized.png?raw=true) <br/>
 
