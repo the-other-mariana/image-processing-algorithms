@@ -1,3 +1,4 @@
+
 #include "opencv2/core/core.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
@@ -14,7 +15,7 @@ int main() {
 	float arr3[256] = { 0 };
 
 
-	Mat image = imread("normal.jpg", CV_LOAD_IMAGE_GRAYSCALE);
+	Mat image = imread("trees.jpg", CV_LOAD_IMAGE_GRAYSCALE);
 
 
 	for (int i = 0; i < image.rows; i++) {
@@ -33,16 +34,16 @@ int main() {
 	}
 
 
-	int alto = image.rows;
-	int ancho = image.cols;
-	Mat myMat1(alto, ancho, CV_8U, Scalar(0));
+	int height = image.rows;
+	int width = image.cols;
+	Mat myMat1(height, width, CV_8U, Scalar(0));
 
 	Mat histog(750, 750, CV_8U, Scalar(0));
 
 	int inc = 750 / 256;
 
 
-	// histograma original
+	// original image histogram
 	for (int i = 0; i < 255; i++) {
 		rectangle(histog, Point(inc * i, histog.rows), Point((inc*(i + 1) - 1), histog.rows - ((arr[i] * histog.rows) / (max))), Scalar(255, 255, 255, 0), CV_FILLED);
 	}
@@ -69,7 +70,7 @@ int main() {
 		}
 	}
 
-	// histograma 2
+	// histogram equalized image
 	int h2[256] = { 0 };
 
 
@@ -94,22 +95,22 @@ int main() {
 	inc = 750 / 256;
 
 
-	// histograma original
+	// histogram equalized image
 	for (int i = 0; i < 255; i++) {
 		rectangle(histog2, Point(inc * i, histog2.rows), Point((inc*(i + 1) - 1), histog2.rows - ((h2[i] * histog2.rows) / (maxH2))), Scalar(255, 255, 255, 0), CV_FILLED);
 	}
 
-	namedWindow("original", WINDOW_AUTOSIZE);
-	imshow("original", image);
+	namedWindow("Original Image", WINDOW_AUTOSIZE);
+	imshow("Original Image", image);
 
-	namedWindow("Histograma", WINDOW_AUTOSIZE);
-	imshow("Histograma", histog);
+	namedWindow("Histogram Original Image", WINDOW_AUTOSIZE);
+	imshow("Histogram Original Image", histog);
 
-	namedWindow("Histograma 2 Ecualizado", WINDOW_AUTOSIZE);
-	imshow("Histograma 2 Ecualizado", histog2);
+	namedWindow("Histogram Equalized Image", WINDOW_AUTOSIZE);
+	imshow("Histogram Equalized Image", histog2);
 
-	namedWindow("Ecualizada", WINDOW_AUTOSIZE);
-	imshow("Ecualizada", myMat1);
+	namedWindow("Equalized Image", WINDOW_AUTOSIZE);
+	imshow("Equalized Image", myMat1);
 	waitKey(0);
 
 
