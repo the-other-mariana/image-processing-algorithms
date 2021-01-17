@@ -47,3 +47,13 @@ I recommend using Microsoft Visual Studio for the debugging and running of the s
 ### 002 [Image Mask](https://github.com/the-other-mariana/image-processing-algorithms/tree/master/002-mask)
 
 ![image](https://github.com/the-other-mariana/image-processing-algorithms/blob/master/002-mask/result.png?raw=true) <br/>
+
+### 005 [Image Equalization & Histogram](https://github.com/the-other-mariana/image-processing-algorithms/tree/master/005-equalization)
+
+#### Equalization 
+
+![image](https://github.com/the-other-mariana/image-processing-algorithms/blob/master/005-equalization/equalized.png?raw=true) <br/>
+
+#### Resulting Histogram
+
+![image](https://github.com/the-other-mariana/image-processing-algorithms/blob/master/005-equalization/equalized-histogram.png?raw=true) <br/>
