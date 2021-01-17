@@ -36,4 +36,14 @@ I recommend using Microsoft Visual Studio for the debugging and running of the s
 
 9. Change the top `Debug` option to `x64`. <br />
 
-10. Run the code! <br />
+10. Run the code. <br />
+
+## Content
+
+### 001 [Image Thresholding](https://github.com/the-other-mariana/image-processing-algorithms/tree/master/001-threshold)
+
+![image](https://github.com/the-other-mariana/image-processing-algorithms/blob/master/001-threshold/output.png?raw=true) <br/>
+
+### 002 [Image Mask](https://github.com/the-other-mariana/image-processing-algorithms/tree/master/002-mask)
+
+![image](https://github.com/the-other-mariana/image-processing-algorithms/blob/master/002-mask/result.png?raw=true) <br/>
