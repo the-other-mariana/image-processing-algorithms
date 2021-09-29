@@ -18,19 +18,19 @@ I recommend using Microsoft Visual Studio for the debugging and running of the s
 
 4. Go to `Project > Project Properties`. <br />
 
-![img](https://github.com/the-other-mariana/image-processing-algorithms/blob/master/resources/properties.png?raw=true) <br />
+![img](https://github.com/the-other-mariana/image-processing-algorithms/blob/master/resources/01.png?raw=true) <br />
 
 5. Click on `VC++` option and change the following directories in **bold**. <br />
 
-![img](https://github.com/the-other-mariana/image-processing-algorithms/blob/master/resources/vc-directories.png?raw=true) <br />
+![img](https://github.com/the-other-mariana/image-processing-algorithms/blob/master/resources/02.png?raw=true) <br />
 
 6. Go to this directory in your `C:\` disk and copy the file name. <br />
 
-![img](https://github.com/the-other-mariana/image-processing-algorithms/blob/master/resources/library-name.png?raw=true) <br />
+![img](https://github.com/the-other-mariana/image-processing-algorithms/blob/master/resources/03.png?raw=true) <br />
 
 7. Then, click on `Linker > Input` where you will paste the copied name from last step. <br />
 
-![img](https://github.com/the-other-mariana/image-processing-algorithms/blob/master/resources/paste-name.png?raw=true) <br />
+![img](https://github.com/the-other-mariana/image-processing-algorithms/blob/master/resources/04.png?raw=true) <br />
 
 8. Click on Apply. <br />
 
